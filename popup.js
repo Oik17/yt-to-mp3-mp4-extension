@@ -1,9 +1,15 @@
-document.getElementById("mp3Btn").addEventListener("click", () => download("mp3"));
-document.getElementById("mp4Btn").addEventListener("click", () => download("mp4"));
+document.getElementById("mp3Btn").addEventListener("click", () => convert("mp3"));
+document.getElementById("mp4Btn").addEventListener("click", () => convert("mp4"));
 
-function download(format) {
+let downloadURL = null;
+
+function convert(format) {
   const url = document.getElementById("url").value;
   const status = document.getElementById("status");
+  const downloadBtn = document.getElementById("downloadBtn");
+
+  downloadBtn.style.display = "none";
+  downloadURL = null;
 
   if (!url.startsWith("http")) {
     status.textContent = "Please enter a valid URL";
@@ -11,21 +17,25 @@ function download(format) {
   }
 
   const apiURL = `https://caterpillar-hack-production.up.railway.app/download?url=${encodeURIComponent(url)}&format=${format}`;
-  status.textContent = "Downloading...";
+  status.textContent = "Converting...";
 
   fetch(apiURL)
     .then(res => {
-      if (!res.ok) throw new Error("Download failed");
+      if (!res.ok) throw new Error("Conversion failed");
       return res.blob();
     })
     .then(blob => {
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = `video.${format}`;
-      a.click();
-      status.textContent = "Download started!";
+      downloadURL = URL.createObjectURL(blob);
+      status.textContent = "✅ Converted successfully!";
+      downloadBtn.style.display = "inline-block";
+      downloadBtn.onclick = () => {
+        const a = document.createElement("a");
+        a.href = downloadURL;
+        a.download = `video.${format}`;
+        a.click();
+      };
     })
     .catch(err => {
-      status.textContent = "Failed: " + err.message;
+      status.textContent = "❌ Failed: " + err.message;
     });
 }
