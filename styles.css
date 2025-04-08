@@ -1,25 +1,68 @@
 body {
-    width: 250px;
-    font-family: sans-serif;
-    padding: 10px;
-  }
-  input {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  button {
-    flex: 1;
-    margin: 0 5px;
-    padding: 5px;
-  }
-  #status {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: green;
-  }
-  
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #f4f4f4;
+margin: 0;
+padding: 0;
+width: 300px;
+}
+
+.container {
+padding: 20px;
+background: #ffffff;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+text-align: center;
+}
+
+h2 {
+margin-top: 0;
+font-size: 20px;
+color: #333;
+}
+
+input[type="text"] {
+width: 100%;
+padding: 10px;
+margin: 15px 0;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 14px;
+}
+
+.buttons {
+display: flex;
+gap: 10px;
+margin-bottom: 15px;
+}
+
+button {
+flex: 1;
+padding: 10px;
+border: none;
+border-radius: 8px;
+background-color: #6200ee;
+color: white;
+font-size: 14px;
+cursor: pointer;
+transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+background-color: #3700b3;
+}
+
+#status {
+font-size: 14px;
+margin-bottom: 10px;
+color: green;
+}
+
+#downloadBtn {
+background-color: #03dac6;
+color: #000;
+}
+
+#downloadBtn:hover {
+background-color: #018786;
+color: #fff;
+}

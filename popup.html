@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>YT Downloader</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Download YouTube</h2>
-  <input type="text" id="url" placeholder="Paste YouTube URL" />
-  <div class="buttons">
-    <button id="mp3Btn">MP3</button>
-    <button id="mp4Btn">MP4</button>
+  <div class="container">
+    <h2>📥 Download YouTube</h2>
+
+    <label class="checkbox">
+      <input type="checkbox" id="autofillCheckbox" checked>
+      Use current YouTube tab
+    </label>
+
+    <input type="text" id="url" placeholder="Paste YouTube URL manually" />
+
+    <div class="buttons">
+      <button id="mp3Btn">Convert to MP3</button>
+      <button id="mp4Btn">Convert to MP4</button>
+    </div>
+
+    <p id="status"></p>
+    <button id="downloadBtn" style="display: none;">⬇️ Download</button>
   </div>
-  <p id="status"></p>
-  <button id="downloadBtn" style="display: none;">Download</button>
 
   <script src="popup.js"></script>
 </body>
