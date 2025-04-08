@@ -7,22 +7,42 @@
 </head>
 <body>
   <div class="container">
-    <h2>📥 Download YouTube</h2>
-
-    <label class="checkbox">
-      <input type="checkbox" id="autofillCheckbox" checked>
-      Use current YouTube tab
-    </label>
-
-    <input type="text" id="url" placeholder="Paste YouTube URL manually" />
-
-    <div class="buttons">
-      <button id="mp3Btn">Convert to MP3</button>
-      <button id="mp4Btn">Convert to MP4</button>
+    <div class="header">
+      <h2>📥 YouTube Downloader</h2>
     </div>
 
-    <p id="status"></p>
-    <button id="downloadBtn" style="display: none;">⬇️ Download</button>
+    <div class="input-section">
+      <label class="checkbox">
+        <input type="checkbox" id="autofillCheckbox" checked>
+        <span>Use current YouTube tab</span>
+      </label>
+
+      <div class="input-wrapper">
+        <input type="text" id="url" placeholder="Paste YouTube URL" />
+        <button id="clearBtn" class="clear-btn">×</button>
+      </div>
+    </div>
+
+    <div class="format-section">
+      <div class="buttons">
+        <button id="mp3Btn" class="format-btn">
+          <span class="icon">🎵</span>
+          <span>MP3 Audio</span>
+        </button>
+        <button id="mp4Btn" class="format-btn">
+          <span class="icon">🎬</span>
+          <span>MP4 Video</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="status-section">
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+      <p id="status"></p>
+      <button id="downloadBtn">⬇️ Download Now</button>
+    </div>
   </div>
 
   <script src="popup.js"></script>
