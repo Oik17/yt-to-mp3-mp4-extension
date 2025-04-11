@@ -3,7 +3,7 @@
     "name": "YT to MP3/MP4 Downloader",
     "description": "Download YouTube videos as MP3 or MP4 using local server",
     "version": "1.0",
-    "permissions": ["activeTab", "scripting", "tabs"],
+    "permissions": ["activeTab", "tabs"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
